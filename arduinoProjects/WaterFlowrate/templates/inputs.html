@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input</title>
+</head>
+<body>
+<center>
+<h1>Enter the inputs Below for configuration
+<form action="http://{{ip}}:5000/bsetconfig" method="POST">
+	<input type="text" name="api" size="30" style="height:40px;" required placeholder="Thingspeak API Writekey"><br>
+	<input type="text" name="mobileurl" size="30" style="height:40px;" placeholder="Url displayed in mobile"><br>
+	<input type="text" name="mobilenumber"  size="30" style="height:40px;" placeholder="Enter the mobile number to send sms"><br>
+	<input type="submit" name="submit" style="width:400px;height:40px;"placeholder="Submit" >
+</form>
+</center>
+</body>
+</html>
