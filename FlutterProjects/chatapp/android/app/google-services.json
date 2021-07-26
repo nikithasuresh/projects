@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "695341915740",
+    "project_id": "simple-chat-app-e974c",
+    "storage_bucket": "simple-chat-app-e974c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695341915740:android:59889585b62a0837eb1099",
+        "android_client_info": {
+          "package_name": "mvsolution.chatapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "695341915740-0pcnndi38ns6tituerjotk51n12si3lh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-xcI3sS_l36FZMC4j3KYyGVc1NFLwdqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "695341915740-0pcnndi38ns6tituerjotk51n12si3lh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
