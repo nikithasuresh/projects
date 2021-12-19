@@ -12,8 +12,11 @@ Color lightmodecolor=Colors.lightBlueAccent;
 TextStyle textstyle=GoogleFonts.rajdhani(color: isdarkmode()?Colors.cyanAccent:Colors.lightBlueAccent,fontSize: 18,fontWeight: FontWeight.w600);
 
 bool isdarkmode() {
-  return SchedulerBinding.instance?.window.platformBrightness == Brightness.dark;
+  return false;
+  // return SchedulerBinding.instance?.window.platformBrightness == Brightness.dark;
 }
 
 
 Color? common3dColor=Colors.grey[100];
+GlobalKey<ScaffoldState> drawerkey = GlobalKey<ScaffoldState>();
+// _drawerkey.currentState.openDrawer();

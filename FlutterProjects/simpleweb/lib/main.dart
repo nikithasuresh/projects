@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:neuomorphic_container/neuomorphic_container.dart';
+import 'package:simpleweb/Screens/login/loginhomescreen.dart';
 import 'package:simpleweb/Widgets/3D%20Button.dart';
 import 'package:simpleweb/Widgets/3DContainer.dart';
 // import 'package:simpleweb/dashboard/sensorDisplay page.dart';
-import 'package:simpleweb/drawer.dart';
+import 'package:simpleweb/Widgets/drawer.dart';
 
 import 'Common/constants.dart';
 import 'Screens/dashboard/dashboardHomePage.dart';
-// import 'dashboard/dashboardHomePage.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  MyHomePage(),
+      home:  LoginPage(),
     );
   }
 }

@@ -12,12 +12,12 @@ import 'package:neuomorphic_container/neuomorphic_container.dart';
 import 'package:simpleweb/Common/constants.dart';
 import 'package:simpleweb/Widgets/3DContainer.dart';
 
-import 'package:simpleweb/drawer.dart';
+import 'package:simpleweb/Widgets/drawer.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 
 class SensorDisplayScreen extends StatefulWidget {
-  const SensorDisplayScreen({Key? key}) : super(key: key);
-
+bool isLaptop;
+SensorDisplayScreen({this.isLaptop=false});
   @override
   _SensorDisplayScreenState createState() => _SensorDisplayScreenState();
 }
@@ -25,9 +25,8 @@ class SensorDisplayScreen extends StatefulWidget {
 class _SensorDisplayScreenState extends State<SensorDisplayScreen> {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return ListView(
+
       children: <Widget>[
 
         Padding(
@@ -35,7 +34,7 @@ class _SensorDisplayScreenState extends State<SensorDisplayScreen> {
           child: Text(
             "Good Morning Nikitha",
             style:
-                GoogleFonts.openSans(fontSize: 30, fontWeight: FontWeight.bold),
+                GoogleFonts.openSans(fontSize: widget.isLaptop? 30:22, fontWeight: FontWeight.bold),
           ),
         ),
         Padding(
@@ -194,77 +193,7 @@ class _SensorDisplayScreenState extends State<SensorDisplayScreen> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: My3DContainer(
-                  color: common3dColor,
-                  width: 300,
-                  child: Column(
-                    children: [
-                      Text(
-                        "Humidity",
-                        style: GoogleFonts.rajdhani(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
-                      Expanded(
-                        child: Container(
-                          height: 190,
-                          width: 190,
-                          child: LiquidCircularProgressIndicator(
-                            value: 0.5, // Defaults to 0.5.
-                            valueColor: AlwaysStoppedAnimation(Colors
-                                .lightBlueAccent), // Defaults to the current Theme's accentColor.
-                            backgroundColor: Colors
-                                .white, // Defaults to the current Theme's backgroundColor.
-                            borderColor: Colors.grey[100],
-                            borderWidth: 1.0,
 
-                            direction: Axis
-                                .vertical, // The direction the liquid moves (Axis.vertical = bottom to top, Axis.horizontal = left to right). Defaults to Axis.vertical.
-                            center: Text(
-                              "50%",
-                              style: GoogleFonts.rajdhani(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: My3DContainer(
-                  color: common3dColor,
-                  width: 300,
-                  child: Column(
-                    children: [
-                      Text(
-                        "Energy reading",
-                        style: GoogleFonts.rajdhani(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.black),
-                      ),
-                      Expanded(
-                        child: SleekCircularSlider(
-                          appearance: CircularSliderAppearance(
-
-                              customColors: CustomSliderColors(trackColor: Colors.grey,progressBarColors: [Colors.cyanAccent,Colors.lightBlueAccent]),
-                              customWidths:
-                                  CustomSliderWidths(progressBarWidth: 10)),
-                          min: 10,
-                          max: 100,
-                          initialValue: 70,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
             ],
           ),
         ),

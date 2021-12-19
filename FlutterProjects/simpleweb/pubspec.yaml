@@ -41,6 +41,14 @@ dependencies:
   liquid_progress_indicator:
   sleek_circular_slider:
   flutter_thermometer:
+  animate_do:
+  animated_search_bar:
+  nice_buttons:
+  flutter_animated_button:
+  awesome_button:
+  eva_icons_flutter:
+  toggle_switch:
+  dio:
 
 dev_dependencies:
   flutter_test:

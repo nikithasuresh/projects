@@ -1,7 +1,4 @@
-
-
-
-
+import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:simpleweb/Common/constants.dart';
@@ -9,9 +6,17 @@ import 'package:simpleweb/Widgets/3D%20Button.dart';
 import 'package:simpleweb/Widgets/3DContainer.dart';
 
 class SideMenu extends StatefulWidget {
- int currentIndexSelected;
- VoidCallback index0,index1,index2,index3,index4;
- SideMenu({this.currentIndexSelected=0,required this.index0,required this.index1,required this.index2,required this.index3,required this.index4});
+  int currentIndexSelected;
+  VoidCallback index0, index1, index2, index3, index4;
+  bool isadminLogin;
+  SideMenu(
+      {this.isadminLogin = false,
+      this.currentIndexSelected = 0,
+      required this.index0,
+      required this.index1,
+      required this.index2,
+      required this.index3,
+      required this.index4});
   @override
   _SideMenuState createState() => _SideMenuState();
 }
@@ -19,7 +24,7 @@ class SideMenu extends StatefulWidget {
 class _SideMenuState extends State<SideMenu> {
   @override
   Widget build(BuildContext context) {
-    return   Center(
+    return Center(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: My3DContainer(
@@ -32,9 +37,8 @@ class _SideMenuState extends State<SideMenu> {
                 children: [
                   Text(
                     "Menu",
-                    style: GoogleFonts.rajdhani(
-                        fontSize: 30,
-                        fontWeight: FontWeight.bold),
+                    style: GoogleFonts.robotoSlab(
+                        fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   Divider(
                     color: Colors.white,
@@ -43,7 +47,6 @@ class _SideMenuState extends State<SideMenu> {
                   SizedBox(
                     height: 30,
                   ),
-
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: My3DButton(
@@ -52,28 +55,26 @@ class _SideMenuState extends State<SideMenu> {
                           width: 270,
                           height: 60,
                           child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Icon(Icons.home_outlined,
-                                  size: 28),
+                              Icon(Icons.home_outlined, size: 28),
                               Text(
                                 "HOME",
-                                style: GoogleFonts.rajdhani(
-                                    fontSize: 30,
-                                    fontWeight:
-                                    FontWeight.w600),
+                                style: GoogleFonts.robotoSlab(
+                                    fontSize: 23, fontWeight: FontWeight.w600),
                               ),
-                              Container(width: 10,
+                              Container(
+                                width: 10,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color:widget.currentIndexSelected==0? Colors.lightBlueAccent:common3dColor
-                                ),
+                                    color: widget.currentIndexSelected == 0
+                                        ? Colors.lightBlueAccent
+                                        : common3dColor),
                               )
                             ],
                           ),
                         ),
-                        onpressed:widget.index0),
+                        onpressed: widget.index0),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -83,29 +84,28 @@ class _SideMenuState extends State<SideMenu> {
                           width: 270,
                           height: 60,
                           child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Icon(Icons.list_alt,
-                                  size: 28),
+                              Icon(Icons.list_alt, size: 28),
                               Text(
                                 "PRODUCTS",
-                                style: GoogleFonts.rajdhani(
-                                    fontSize: 30,
-                                    fontWeight:
-                                    FontWeight.w600),
+                                style: GoogleFonts.robotoSlab(
+                                    fontSize: 23, fontWeight: FontWeight.w600),
                               ),
-                              Container(width: 10,
+                              Container(
+                                width: 10,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: widget.currentIndexSelected==1? Colors.lightBlueAccent:common3dColor
-                                ),
+                                    color: widget.currentIndexSelected == 1
+                                        ? Colors.lightBlueAccent
+                                        : common3dColor),
                               )
                             ],
                           ),
                         ),
                         onpressed: widget.index1),
-                  ),  Padding(
+                  ),
+                  if(widget.isadminLogin)Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: My3DButton(
                         color: common3dColor,
@@ -113,29 +113,28 @@ class _SideMenuState extends State<SideMenu> {
                           width: 270,
                           height: 60,
                           child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Icon(Icons.switch_right_rounded,
-                                  size: 28),
+                              Icon(Icons.switch_right_rounded, size: 28),
                               Text(
                                 "CONFIGURE",
-                                style: GoogleFonts.rajdhani(
-                                    fontSize: 30,
-                                    fontWeight:
-                                    FontWeight.w600),
+                                style: GoogleFonts.robotoSlab(
+                                    fontSize: 23, fontWeight: FontWeight.w600),
                               ),
-                              Container(width: 10,
+                              Container(
+                                width: 10,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: widget.currentIndexSelected==2? Colors.lightBlueAccent:common3dColor
-                                ),
+                                    color: widget.currentIndexSelected == 2
+                                        ? Colors.lightBlueAccent
+                                        : common3dColor),
                               )
                             ],
                           ),
                         ),
                         onpressed: widget.index2),
-                  ),  Padding(
+                  ),
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: My3DButton(
                         color: common3dColor,
@@ -143,29 +142,28 @@ class _SideMenuState extends State<SideMenu> {
                           width: 270,
                           height: 60,
                           child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Icon(Icons.report,
-                                  size: 28),
+                              Icon(EvaIcons.barChart2, size: 28),
                               Text(
                                 "REPORT",
-                                style: GoogleFonts.rajdhani(
-                                    fontSize: 30,
-                                    fontWeight:
-                                    FontWeight.w600),
+                                style: GoogleFonts.robotoSlab(
+                                    fontSize: 23, fontWeight: FontWeight.w600),
                               ),
-                              Container(width: 10,
+                              Container(
+                                width: 10,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: widget.currentIndexSelected==3? Colors.lightBlueAccent:common3dColor
-                                ),
+                                    color: widget.currentIndexSelected == 3
+                                        ? Colors.lightBlueAccent
+                                        : common3dColor),
                               )
                             ],
                           ),
                         ),
                         onpressed: widget.index3),
-                  ),  Padding(
+                  ),
+                  Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: My3DButton(
                         color: common3dColor,
@@ -173,23 +171,21 @@ class _SideMenuState extends State<SideMenu> {
                           width: 270,
                           height: 60,
                           child: Row(
-                            mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Icon(Icons.settings,
-                                  size: 28),
+                              Icon(Icons.settings, size: 28),
                               Text(
                                 "SETTINGS",
-                                style: GoogleFonts.rajdhani(
-                                    fontSize: 30,
-                                    fontWeight:
-                                    FontWeight.w600),
+                                style: GoogleFonts.robotoSlab(
+                                    fontSize: 23, fontWeight: FontWeight.w600),
                               ),
-                              Container(width: 10,
+                              Container(
+                                width: 10,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: widget.currentIndexSelected==4? Colors.lightBlueAccent:common3dColor
-                                ),
+                                    color: widget.currentIndexSelected == 4
+                                        ? Colors.lightBlueAccent
+                                        : common3dColor),
                               )
                             ],
                           ),

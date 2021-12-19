@@ -7,7 +7,6 @@ import 'package:simpleweb/Common/constants.dart';
 
 
 class My3DContainer extends StatefulWidget {
-
   double? intensity;
   Offset? offset;
   double? blur;
@@ -28,7 +27,7 @@ class _My3DContainerState extends State<My3DContainer> {
       intensity: widget.intensity??intensity,
       offset: widget.offset??offset,
       blur: widget.blur??blur,
-      color: widget.color?? (isdarkmode() ? Colors.brown : Colors.white),
+      color: widget.color?? (common3dColor),
       borderRadius: widget.borderRadius??BorderRadius.circular(12),
       style: widget.style??(isdarkmode() ? NeuomorphicStyle.Flat : NeuomorphicStyle.Flat),
       height: widget.height??null,
